@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispering Pixel Maze</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Whispering Pixel Maze</h1>
+
+    <div id="difficulty-selection">
+        <h2>Choose a Difficulty</h2>
+        <button id="easy-btn">Easy</button>
+        <button id="hard-btn">Hard</button>
+    </div>
+
+    <div id="game-wrapper" style="display: none;">
+        <div id="game-container">
+            </div>
+        <div id="caption-box"></div>
+    </div>
+
+    <audio id="proximity-sound" src="assets/hum.mp3" loop></audio>
+    <audio id="found-sound" src="assets/chime.mp3"></audio>
+    <audio id="bump-sound" src="assets/bump.mp3"></audio>
+    <audio id="up-sound" src="assets/up.mp3"></audio>
+    <audio id="down-sound" src="assets/down.mp3"></audio>
+    <audio id="left-sound" src="assets/left.mp3"></audio>
+    <audio id="right-sound" src="assets/right.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

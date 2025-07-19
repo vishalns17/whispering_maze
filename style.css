@@ -1,0 +1,113 @@
+/* Import the classic 8-bit font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #1f1f1f; /* A dark, charcoal background */
+    color: #e0e0e0;
+    font-family: 'Press Start 2P', Courier, monospace;
+    text-align: center;
+    image-rendering: pixelated; /* Ensures sprites look sharp and blocky */
+}
+
+h1, h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; /* Glitchy text shadow effect */
+}
+
+/* --- UI Elements --- */
+#difficulty-selection button {
+    background-color: #555;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 15px 25px;
+    border: 2px solid #111;
+    box-shadow: inset -3px -3px #000000; /* Inset shadow for 3D effect */
+    cursor: pointer;
+    margin: 10px;
+}
+
+#difficulty-selection button:hover,
+#difficulty-selection button:focus {
+    background-color: #777;
+    outline: 2px solid #ffffff; /* Clear focus indicator */
+}
+
+#difficulty-selection button:active {
+    box-shadow: inset 3px 3px #000000; /* "Pressed" effect */
+}
+
+/* --- Game Board --- */
+#game-container {
+    display: grid;
+    width: 80vh;
+    height: 80vh;
+    max-width: 700px;
+    max-height: 700px;
+    margin: 20px auto;
+    /* A classic 8-bit style border */
+    border: 8px solid;
+    border-image: linear-gradient(45deg, #00ffff, #ff00ff) 1;
+    background-color: #444; /* Fallback color for the container */
+    transition: box-shadow 0.3s ease-out;
+}
+
+.grid-cell {
+    width: 100%;
+    height: 100%;
+}
+
+.wall { 
+    background-color: #9d553e; /* Brick red color */
+    background-image: url('assets/wall-texture.png');
+}
+.path { 
+    background-color: #bcae83; /* Sandy stone color */
+    background-image: url('assets/path-texture.png');
+}
+
+.treasure {
+    /* background-color: #ffcc00; Gold color for treasure */
+    background-image: url('assets/treasure.png');
+}
+
+/* --- Sprites (Player and Treasure) --- */
+/* Base class for any sprite */
+.player, .treasure {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Player state-specific GIFs */
+.player.player-idle {
+    background-image: url('assets/player-idle.gif');
+}
+.player.player-running {
+    background-image: url('assets/player-running.gif');
+}
+
+/* Treasure sprite */
+.treasure {
+    background-image: url('assets/treasure.png');
+}
+
+/* --- Text Box --- */
+#caption-box {
+    margin-top: 20px;
+    font-size: 1.2em;
+    height: 2em;
+    line-height: 1.5;
+    color: #fff;
+}
+
+#new-game-btn {
+    font-family: inherit;
+    font-size: 1em;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #00ffff;
+    color: #111;
+    border: none;
+    cursor: pointer;
+}
